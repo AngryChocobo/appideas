@@ -27,7 +27,7 @@ function App() {
     (ideaList.filter((v) => v.status).length / ideaList.length) * 100;
 
   return (
-    <div className="max-w-screen-md m-auto">
+    <div className="max-w-screen-md h-full">
       <div className="flex">
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
