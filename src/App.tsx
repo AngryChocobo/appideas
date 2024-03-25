@@ -27,7 +27,7 @@ function App() {
     (ideaList.filter((v) => v.status).length / ideaList.length) * 100;
 
   return (
-    <div className="max-w-screen-md h-full">
+    <div className="h-full max-w-screen-md">
       <div className="flex">
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
@@ -36,7 +36,7 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <div className="flex items-center space-x-4 mb-4">
+      <div className="mb-4 flex items-center space-x-4">
         <div className="text-lg">Tier Options </div>
         {tierList.map((tier) => (
           <div key={tier} className="flex items-center">
@@ -62,7 +62,7 @@ function App() {
         </TableHeader>
         <TableBody>
           {ideaList.map((idea) => (
-            <TableRow key={idea.href}>
+            <TableRow key={idea.name}>
               <TableCell className="font-medium">
                 <Button variant="link" className="px-0 font-bold">
                   <Link to={idea.href}>{idea.name}</Link>
