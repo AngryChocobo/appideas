@@ -10,7 +10,7 @@ const ChristmasLights = () => {
   items-center justify-center bg-black"
     >
       <div className="aa flex h-11 w-1/2 gap-2 text-white">
-        {lights.map((light) => {
+        {lights.map((light, index) => {
           return (
             <div
               key={light}
@@ -18,7 +18,8 @@ const ChristmasLights = () => {
               style={{
                 backgroundColor: light,
                 animationDuration: duration + "s",
-                animationName: "animation-red",
+                animationDirection: index % 2 == 0 ? "reverse" : "normal",
+                animationName: "animation-" + light,
               }}
             ></div>
           );
