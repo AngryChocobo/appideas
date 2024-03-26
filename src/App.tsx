@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Checkbox } from "@/components/ui/checkbox";
-import { ideaList } from "./ideaList";
+import { Tier, ideaList } from "./ideaList";
 import {
   Table,
   TableBody,
@@ -21,13 +21,17 @@ import {
 import { Progress } from "@/components/ui/progress";
 
 function App() {
-  const [tierList] = useState(["Beginner", "Intermediate", "Advanced"]);
-  const [checkedTier] = useState(["Beginner", "Intermediate", "Advanced"]);
+  const [tierList] = useState<Tier[]>(["Beginner", "Intermediate", "Advanced"]);
+  const [checkedTier] = useState<Tier[]>([
+    "Beginner",
+    "Intermediate",
+    "Advanced",
+  ]);
   const progress =
     (ideaList.filter((v) => v.status).length / ideaList.length) * 100;
 
   return (
-    <div className="h-full max-w-screen-md">
+    <div className="m-auto h-full max-w-screen-md">
       <div className="flex">
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
@@ -65,7 +69,7 @@ function App() {
             <TableRow key={idea.name}>
               <TableCell className="font-medium">
                 <Button variant="link" className="px-0 font-bold">
-                  <Link to={idea.href}>{idea.name}</Link>
+                  <Link to={idea.href ?? "/"}>{idea.name}</Link>
                 </Button>
               </TableCell>
               <TableCell>{idea.shortDescription}</TableCell>

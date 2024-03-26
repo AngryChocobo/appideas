@@ -1,4 +1,14 @@
-export const ideaList = [
+export type Idea = {
+  name: string;
+  shortDescription: string;
+  status?: boolean;
+  tier: Tier;
+  href?: string;
+};
+
+export type Tier = "Beginner" | "Intermediate" | "Advanced";
+
+export const ideaList: Idea[] = [
   {
     name: "Bin2Dec",
     shortDescription: "Binary-to-Decimal number converter",
@@ -17,6 +27,8 @@ export const ideaList = [
     name: "Calculator",
     shortDescription: "Calculator",
     tier: "Beginner",
+    href: "calculator",
+    status: true,
   },
   {
     name: "Christmas Lights",
