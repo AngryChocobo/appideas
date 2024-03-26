@@ -9,14 +9,14 @@ const Calculator = () => {
       method: () => {
         const temp = String(display).split("");
         temp.pop();
-        const now = Number(temp.join(""));
+        const now = temp.join("");
         setDisplay(now);
       },
     },
     {
       key: "+/-",
       method: () => {
-        setDisplay(display * -1);
+        setDisplay(Number(display) * -1 + "");
       },
     },
     {
@@ -110,7 +110,14 @@ const Calculator = () => {
         addNumber("0");
       },
     },
-    { key: ".", method: () => {} },
+    {
+      key: ".",
+      method: () => {
+        if (!display.includes(".")) {
+          setDisplay(display + ".");
+        }
+      },
+    },
     {
       key: "=",
       method: () => {
@@ -119,48 +126,52 @@ const Calculator = () => {
     },
   ];
   const addNumber = (numStr: string) => {
-    setDisplay(Number(String(display) + numStr));
+    setDisplay(display + numStr);
   };
   const addOperation = (op: Operation) => {
     setOperation(op);
-    setPrevNum(display);
-    setDisplay(0);
+    setPrevNum(Number(display));
+    setDisplay("");
   };
   const getResult = () => {
     if (!operation) {
       return;
     }
     let result = 0;
+    let now = display;
+    if (now.endsWith(".")) {
+      now = now.slice(0, -1);
+    }
     switch (operation) {
       case "+":
-        result = prevNum + display;
+        result = prevNum + Number(now);
         break;
       case "-":
-        result = prevNum - display;
+        result = prevNum - Number(now);
         break;
       case "*":
-        result = prevNum * display;
+        result = prevNum * Number(now);
         break;
       case "/":
-        result = prevNum / display;
+        result = prevNum / Number(now);
         break;
       case "%":
-        result = prevNum % display;
+        result = prevNum % Number(now);
         break;
       default:
         break;
     }
-    setDisplay(result);
+    setDisplay(result + "");
     setOperation(undefined);
   };
   const [prevNum, setPrevNum] = useState(0);
 
-  const [display, setDisplay] = useState(0);
+  const [display, setDisplay] = useState("");
   const [operation, setOperation] = useState<Operation>();
   return (
     <div className="flex h-full w-full flex-col items-center justify-center">
       <div className="rounded-2xl border-2 border-slate-300 p-4">
-        <div className="min-h-[1em] w-full p-2 text-right text-4xl">
+        <div className="h-[2em] min-h-[2em] w-full p-2 text-right text-4xl">
           {display}
         </div>
         <div className="grid select-none grid-cols-4 gap-4">
