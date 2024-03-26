@@ -4,6 +4,7 @@ import App from "./App.tsx";
 import Bin2Dec from "./pages/bin2dec";
 import Calculator from "./pages/calculator";
 import ChristmasLights from "./pages/christmas-lights";
+import CauseEffectApp from "./pages/cause-effect-app";
 import BorderRadiusPreviewer from "./pages/border-radius-previewer";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
   {
     path: "christmas-lights",
     element: <ChristmasLights />,
+  },
+  {
+    path: "cause-effect-app",
+    element: <CauseEffectApp />,
   },
 ]);
 

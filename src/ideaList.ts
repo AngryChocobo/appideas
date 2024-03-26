@@ -35,11 +35,14 @@ export const ideaList: Idea[] = [
     shortDescription: "Simulate a string of Christmas lights",
     tier: "Beginner",
     href: "christmas-lights",
+    status: true,
   },
   {
     name: "Cause Effect App",
     shortDescription: "Click list item to display item details",
     tier: "Beginner",
+    href: "cause-effect-app",
+    status: true,
   },
   {
     name: "Color Cycle",
