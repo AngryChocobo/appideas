@@ -53,6 +53,7 @@ export const ideaList: Idea[] = [
     name: "Countdown Timer",
     shortDescription: "Event Countdown timer",
     tier: "Beginner",
+    status: true,
   },
   {
     name: "CSV2JSON App",

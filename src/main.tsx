@@ -5,6 +5,7 @@ import Bin2Dec from "./pages/bin2dec";
 import Calculator from "./pages/calculator";
 import ChristmasLights from "./pages/christmas-lights";
 import CauseEffectApp from "./pages/cause-effect-app";
+import CountdownTimer from "./pages/countdown-timer";
 import BorderRadiusPreviewer from "./pages/border-radius-previewer";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
   {
     path: "cause-effect-app",
     element: <CauseEffectApp />,
+  },
+  {
+    path: "countdown-timer",
+    element: <CountdownTimer />,
   },
 ]);
 
