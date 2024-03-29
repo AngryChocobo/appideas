@@ -28,7 +28,7 @@ function App() {
     "Advanced",
   ]);
   const progress =
-    (ideaList.filter((v) => v.status).length / ideaList.length) * 100;
+    (ideaList.filter((v) => v.finished).length / ideaList.length) * 100;
 
   return (
     <div className="m-auto h-full max-w-screen-md">
@@ -61,7 +61,7 @@ function App() {
             <TableHead className="w-[100px]">Name</TableHead>
             <TableHead>Short Description</TableHead>
             <TableHead>Tier</TableHead>
-            <TableHead className="text-right">Status</TableHead>
+            <TableHead className="text-right">finished</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -77,7 +77,7 @@ function App() {
                 <Badge key={idea.tier}>{idea.tier}</Badge>
               </TableCell>
               <TableCell className="text-right">
-                {idea.status ? "✅" : "⭕️"}
+                {idea.finished ? "✅" : "⭕️"}
               </TableCell>
             </TableRow>
           ))}

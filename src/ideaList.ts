@@ -1,7 +1,7 @@
 export type Idea = {
   name: string;
   shortDescription: string;
-  status?: boolean;
+  finished?: boolean;
   tier: Tier;
   href?: string;
 };
@@ -12,14 +12,14 @@ export const ideaList: Idea[] = [
   {
     name: "Bin2Dec",
     shortDescription: "Binary-to-Decimal number converter",
-    status: true,
+    finished: true,
     tier: "Beginner",
     href: "bin2dec",
   },
   {
     name: "Border Radius Previewer",
     shortDescription: "Preview how CSS3 border-radius values affect an element",
-    status: true,
+    finished: true,
     tier: "Beginner",
     href: "border-radius-previewer",
   },
@@ -28,21 +28,21 @@ export const ideaList: Idea[] = [
     shortDescription: "Calculator",
     tier: "Beginner",
     href: "calculator",
-    status: true,
+    finished: true,
   },
   {
     name: "Christmas Lights",
     shortDescription: "Simulate a string of Christmas lights",
     tier: "Beginner",
     href: "christmas-lights",
-    status: true,
+    finished: true,
   },
   {
     name: "Cause Effect App",
     shortDescription: "Click list item to display item details",
     tier: "Beginner",
     href: "cause-effect-app",
-    status: true,
+    finished: true,
   },
   {
     name: "Color Cycle",
@@ -53,13 +53,13 @@ export const ideaList: Idea[] = [
     name: "Countdown Timer",
     shortDescription: "Event Countdown timer",
     tier: "Beginner",
-    status: true,
+    finished: true,
   },
   {
     name: "CSV2JSON App",
     shortDescription: "CSV to JSON converter",
     tier: "Beginner",
-    status: true,
+    finished: true,
     href: "csv2json",
   },
   {
@@ -71,6 +71,8 @@ export const ideaList: Idea[] = [
     name: "Dynamic CSS Variables",
     shortDescription: "Dynamically change CSS variable settings",
     tier: "Beginner",
+    href: "dynamic-css-variables",
+    finished: true,
   },
   {
     name: "First DB App",
@@ -83,8 +85,8 @@ export const ideaList: Idea[] = [
     tier: "Beginner",
   },
   {
-    name: "GitHub Status",
-    shortDescription: "Display Current GitHub Status",
+    name: "GitHub finished",
+    shortDescription: "Display Current GitHub finished",
     tier: "Beginner",
   },
   {
@@ -106,7 +108,7 @@ export const ideaList: Idea[] = [
     name: "JSON2CSV App",
     shortDescription: "JSON to CSV converter",
     tier: "Beginner",
-    status: true,
+    finished: true,
     href: "json2csv",
   },
   {
