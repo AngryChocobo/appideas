@@ -59,6 +59,8 @@ export const ideaList: Idea[] = [
     name: "CSV2JSON App",
     shortDescription: "CSV to JSON converter",
     tier: "Beginner",
+    status: true,
+    href: "csv2json",
   },
   {
     name: "Dollars to Cents",
@@ -104,6 +106,8 @@ export const ideaList: Idea[] = [
     name: "JSON2CSV App",
     shortDescription: "JSON to CSV converter",
     tier: "Beginner",
+    status: true,
+    href: "json2csv",
   },
   {
     name: "Key Value",

@@ -6,6 +6,7 @@ import Calculator from "./pages/calculator";
 import ChristmasLights from "./pages/christmas-lights";
 import CauseEffectApp from "./pages/cause-effect-app";
 import CountdownTimer from "./pages/countdown-timer";
+import JSON2CSV from "./pages/json2csv";
 import BorderRadiusPreviewer from "./pages/border-radius-previewer";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
@@ -37,6 +38,14 @@ const router = createBrowserRouter([
   {
     path: "countdown-timer",
     element: <CountdownTimer />,
+  },
+  {
+    path: "json2csv",
+    element: <JSON2CSV />,
+  },
+  {
+    path: "csv2json",
+    element: <JSON2CSV />,
   },
 ]);
 
